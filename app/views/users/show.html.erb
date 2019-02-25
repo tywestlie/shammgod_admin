@@ -2,7 +2,8 @@
 
 <%= button_to 'Log Out', logout_path, method: 'delete' %>
 <div class="articles">
+<%= button_to 'New Article', new_article_path, method: 'get' %>
   <% if current_user %>
-  <%= render 'partials/articles' %>
-  <% end %>  
+    <%= render 'partials/articles' %>
+  <% end %>
 </div>

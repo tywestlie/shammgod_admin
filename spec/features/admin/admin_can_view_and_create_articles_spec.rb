@@ -30,6 +30,7 @@ describe 'Admin Visits Dashboard' do
 
     visit dashboard_path
 
+    
     within(".articles") do
       expect(page).to have_content(article1.title)
       expect(page).to have_content(article2.title)
@@ -42,5 +43,28 @@ describe 'Admin Visits Dashboard' do
 
     expect(page).to have_content(article1.title)
     expect(page).to have_content(article1.body)
+  end
+
+  it 'admin can create a new article' do
+    admin = User.create(email: 'admin@gmail.com', password:'admin', role: 1)
+    title = 'A Great Title'
+    body = 'Look at all this text!!!!'
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+    visit dashboard_path
+
+    click_on 'New Article'
+
+    expect(current_path).to eq(new_article_path)
+
+    fill_in 'article[title]', with: title
+    fill_in 'article[body]', with: body
+
+    click_on 'Create Article'
+
+    expect(current_path).to eq(dashboard_path)
+
+    expect(page).to have_content(title)
   end
 end
