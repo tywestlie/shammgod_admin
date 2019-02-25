@@ -37,6 +37,10 @@ describe 'Admin Visits Dashboard' do
     end
 
     click_on  article1.title
-    expect(current_page).to eq()
+
+    expect(current_path).to eq(article_path(article1.id))
+
+    expect(page).to have_content(article1.title)
+    expect(page).to have_content(article1.body)
   end
 end
