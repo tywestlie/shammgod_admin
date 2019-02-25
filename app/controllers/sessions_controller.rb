@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to dashboard_path
      else
-       render html: helpers.tag.strong('invalid information')
+       render html: helpers.tag.strong('Invalid Login Information')
      end
   end
 
