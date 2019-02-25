@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
 
   get '/dashboard', to: 'users#show'
+  get '/article', to: 'articles#show'
 end

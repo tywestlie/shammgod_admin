@@ -1,3 +1,8 @@
 <h1>Hello <%= current_user.email %> </h1>
 
 <%= button_to 'Log Out', logout_path, method: 'delete' %>
+<div class="articles">
+  <% if current_user %>
+  <%= render 'partials/articles' %>
+  <% end %>  
+</div>
