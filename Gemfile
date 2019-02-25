@@ -22,7 +22,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'factory_bot_rails'
 gem 'faker'
-
+gem 'selenium-webdriver'
 gem 'bcrypt'
 
 group :development, :test do
