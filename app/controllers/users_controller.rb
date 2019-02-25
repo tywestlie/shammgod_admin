@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def Show
+  def show
+    @articles = current_user.articles
   end
 end
