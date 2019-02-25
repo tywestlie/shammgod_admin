@@ -1,21 +1,8 @@
-<div class="user-login">
-  <main>
-    <section>
-      <%= form_for :session, url: login_path, class: "newclass" do |f| %>
-      <div>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
-      <div>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-    </section>
-    <div class="login-btns">
-      <div class="login-create">
-        <%= f.submit 'Log In', class: "btn btn-primary mb1 bg-teal" %>
-        <% end %>
-      </div>
-    </div>
-  </main>
-</div>
+<h1>Shammgod Admin Tools</h1>
+<%= form_tag login_path do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Log In" %>
+<% end %>
